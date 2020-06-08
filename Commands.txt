@@ -1,0 +1,19 @@
+
+
+docker build --tag "jwt-api-test" .
+
+docker run --env-file=env_file  -p 80:8080 "jwt-api-test"
+
+
+curl -d '{"email":"test@test.com","password":"Pelos123!"}' -H "Content-Type: application/json" -X POST localhost:80/auth
+
+
+curl --request GET 'http://127.0.0.1:80/contents' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTI3OTg3NjYsIm5iZiI6MTU5MTU4OTE2NiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIn0.CzQolSh3EEIsgyWHyXpQqVpLuetwXwT3u9mGpi7uwT0"
+
+
+eksctl create cluster --name simple-jwt-api
+
+
+64f8dfd1e36ecd0cd746c445147d12ac3d8b0412
+
+aws ssm put-parameter --name JWT_SECRET --value "64f8dfd1e36ecd0cd746c445147d12ac3d8b0412" --type SecureString
