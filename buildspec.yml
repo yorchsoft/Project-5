@@ -38,4 +38,4 @@ artifacts:
 
 env:
   parameter-store:
-    JWT_SECRET: 64f8dfd1e36ecd0cd746c445147d12ac3d8b0412
+    JWT_SECRET: 3f656513a091921f0342471ac22009f824a288f8
