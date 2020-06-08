@@ -14,6 +14,3 @@ curl --request GET 'http://127.0.0.1:80/contents' -H "Authorization: Bearer eyJ0
 eksctl create cluster --name simple-jwt-api
 
 
-64f8dfd1e36ecd0cd746c445147d12ac3d8b0412
-
-aws ssm put-parameter --name JWT_SECRET --value "64f8dfd1e36ecd0cd746c445147d12ac3d8b0412" --type SecureString
